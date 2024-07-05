@@ -47,14 +47,10 @@ def ngl():
     os.system('cls' if os.name == 'nt' else 'clear')
 
     print(Colorate.Vertical(Colors.blue_to_purple,"""
-        ░██████╗███╗░░░███╗░█████╗░██╗░░██╗███████╗
-        ██╔════╝████╗░████║██╔══██╗██║░██╔╝██╔════╝
-        ╚█████╗░██╔████╔██║███████║█████═╝░█████╗░░
-        ░╚═══██╗██║╚██╔╝██║██╔══██║██╔═██╗░██╔══╝░░
-        ██████╔╝██║░╚═╝░██║██║░░██║██║░╚██╗███████╗
-        ╚═════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝  
-    """))
-    
+        █▀▀█▀▀█ █▀▀█ ▀▀█▀▀
+        █  █  █ █  █   █   
+        █  █  █ █▄▄█   █
+        """))    
     nglusername = input(Colorate.Vertical(Colors.blue_to_purple,"Username: "))
     message = input(Colorate.Vertical(Colors.blue_to_purple,"Message: "))
     Count = int(input(Colorate.Vertical(Colors.blue_to_purple,"Count:")))
@@ -100,19 +96,19 @@ def ngl():
             if response.status_code == 200:
                 notsend = 0
                 value += 1
-                print(G + "[+]" + W + "Send =>" + G + "{}".format(value) + W)
+                print(G + "SUCCESS" + W + "Send =>" + G + "{}".format(value) + W)
             else:
                 notsend += 1
-                print(R + "[-]" + W + "Not Send")
+                print(R + "ERROR" + W + "Not Send")
             if notsend == 4:
-                print(R + "[!]" + W + "Changing information")
+                print(R + "CHANGING" + W + "Changing information")
                 deviceId()
                 UserAgent()
                 if use_proxy == "y":
                     proxies = Proxy()
                 notsend = 0
         except requests.exceptions.ProxyError as e:
-            print(R + "[-]" + W + "Bad Proxy!" + W)
+            print(R + "BAD" + W + "Bad Proxy!" + W)
             if use_proxy == "y":
                 proxies = Proxy()
 ngl()
